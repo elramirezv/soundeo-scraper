@@ -1,5 +1,6 @@
-from config import DOWNLOAD_DIR
 from selenium import webdriver
+
+from config import DOWNLOAD_DIR
 
 chrome_options = webdriver.ChromeOptions()
 preferences = {

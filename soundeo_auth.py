@@ -1,7 +1,13 @@
+import os
 import pickle
+import time
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+from driver_setup import driver
+
 
 def login(driver):
     account_link = driver.find_element(By.CSS_SELECTOR, "a[href='/account/logoreg']")
@@ -25,9 +31,20 @@ def download_cookies(driver):
         pickle.dump(cookies, file)
 
 def set_cookies(driver):
+    if not os.path.exists("soundeo_cookies.pkl"):
+        raise Exception("No cookies found: You must login first running 'python soundeo_auth.py'")
+    
     with open("soundeo_cookies.pkl", "rb") as file:
         cookies = pickle.load(file)
         for cookie in cookies:
             driver.add_cookie(cookie)
     
     return driver
+
+if __name__ == "__main__":
+    print("Going to login page")
+    login(driver)
+    print("Logged in")
+    time.sleep(3)
+    download_cookies(driver)
+    driver.quit()
