@@ -1,11 +1,9 @@
+from config import DOWNLOAD_DIR
 from selenium import webdriver
-
-
-download_dir = "/Users/alekhan/Downloads/Musica"
 
 chrome_options = webdriver.ChromeOptions()
 preferences = {
-    "download.default_directory": download_dir,
+    "download.default_directory": DOWNLOAD_DIR,
     "download.prompt_for_download": False,
     "download.directory_upgrade": True,
     "profile.default_content_settings.popups": 0,  # Deshabilitar ventanas emergentes
