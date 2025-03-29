@@ -1,7 +1,5 @@
-import os
 import time
 
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -10,7 +8,6 @@ from soundeo_auth import download_cookies, login, set_cookies
 from utils import download_aiff_files, get_last_page_number, go_to_page
 
 if __name__ == "__main__":
-    
     driver.get("https://soundeo.com")
     driver.delete_all_cookies()
     time.sleep(3)

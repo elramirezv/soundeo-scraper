@@ -1,4 +1,10 @@
 import os
+import time
+
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+
+from config import DOWNLOAD_DIR
 
 
 def check_if_file_exists(file_path):

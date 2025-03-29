@@ -42,6 +42,9 @@ def set_cookies(driver):
     return driver
 
 if __name__ == "__main__":
+    driver.get("https://soundeo.com")
+    driver.delete_all_cookies()
+    time.sleep(3)
     print("Going to login page")
     login(driver)
     print("Logged in")
