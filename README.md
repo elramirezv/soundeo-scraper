@@ -11,7 +11,7 @@ A Python-based scraper for downloading music from your Soundeo account.
 
 1. Clone this repository:
    ```
-   git clone (https://github.com/elramirezv/soundeo-scraper)[https://github.com/elramirezv/soundeo-scraper]
+   git clone https://github.com/elramirezv/soundeo-scraper
    cd soundeo-scraper
    ```
 
